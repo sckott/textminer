@@ -1,11 +1,13 @@
 require "textminer"
 require 'fileutils'
 require "test/unit"
+require "oga"
 
 class TestResponse < Test::Unit::TestCase
 
   def setup
     @doi = '10.5555/515151'
+    @doi2 = "10.3897/phytokeys.42.7604"
     @pdf = "http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.pdf"
     @xml = "http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.xml"
   end
@@ -25,5 +27,19 @@ class TestResponse < Test::Unit::TestCase
   def test_xml
     assert_equal(@xml, Textminer.links(@doi).xml)
   end
+
+  def test_fetch_xml
+    res = Textminer.fetch(@doi2, "xml")
+    assert_equal(HTTParty::Response, res.class)
+    assert_true(res.ok?)
+    assert_equal(String, res.body.class)
+    assert_equal("PhytoKeys", Oga.parse_xml(res.body).xpath('//journal-meta//journal-id').text)
+  end
+
+  # def test_fetch_pdf
+  #   res = Textminer.fetch(@doi2, "pdf")
+  #   assert_equal(HTTParty::Response, res.class)
+  #   assert_true(res.ok?)
+  # end
 
 end
