@@ -13,15 +13,13 @@ __`textminer` helps you text mine through Crossref's TDM:__
 
 For changes see the [NEWS file](https://github.com/sckott/textminer/blob/master/NEWS.md).
 
-## Quickstart
+## Install
 
-### Install
-
-#### Release version
+### Release version
 
 Not on RubyGems yet
 
-#### Development version
+### Development version
 
 Install dependencies
 
@@ -36,7 +34,7 @@ bundle install
 
 After `bundle install` the `textminer` gem is installed and available on the command line or in a Ruby repl.
 
-### Within Ruby
+## Within Ruby
 
 Search by DOI
 
@@ -65,6 +63,13 @@ out.xml
 "http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.xml"
 ```
 
+## On the CLI
+
+coming soon...
+
 ## To do
 
-* ...
+* CLI executable
+* get actual full text
+* better test suite
+* documentation
