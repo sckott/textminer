@@ -63,6 +63,38 @@ out.xml
 "http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.xml"
 ```
 
+Fetch XML
+
+```ruby
+Textminer.fetch("10.3897/phytokeys.42.7604", "xml")
+```
+
+```ruby
+=> {"article"=>
+  {"front"=>
+    {"journal_meta"=>
+      {"journal_id"=>
+        {"__content__"=>"PhytoKeys", "journal_id_type"=>"publisher-id"},
+       "journal_title_group"=>
+        {"journal_title"=>{"__content__"=>"PhytoKeys", "lang"=>"en"},
+         "abbrev_journal_title"=>{"__content__"=>"PhytoKeys", "lang"=>"en"}},
+       "issn"=>
+        [{"__content__"=>"1314-2011", "pub_type"=>"ppub"},
+         {"__content__"=>"1314-2003", "pub_type"=>"epub"}],
+       "publisher"=>{"publisher_name"=>"Pensoft Publishers"}},
+     "article_meta"=>
+
+...
+```
+
+Fetch PDF
+
+```ruby
+Textminer.fetch("10.3897/phytokeys.42.7604", "pdf")
+```
+
+> pdf written to disk
+
 ## On the CLI
 
 coming soon...
