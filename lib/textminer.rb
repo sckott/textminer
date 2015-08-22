@@ -1,10 +1,6 @@
-require 'cites'
-require 'api_cache'
-require 'bibtex'
 require 'digest/sha1'
 require 'httparty'
 require 'json'
-require 'moneta'
 
 module Textminer
 	##
