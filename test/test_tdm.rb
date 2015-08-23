@@ -1,8 +1,14 @@
+require 'simplecov'
+SimpleCov.start
+if ENV['CI']=='true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 require "textminer"
 require 'fileutils'
 require "test/unit"
 require "oga"
-require 'helper'
 
 class TestResponse < Test::Unit::TestCase
 
