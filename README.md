@@ -22,18 +22,10 @@ Not on RubyGems yet
 
 ### Development version
 
-Install dependencies
-
 ```
-gem install httparty launchy json rake api_cache moneta
-sudo gem install thor
-sudo gem install bundler
-git clone https://github.com/sckott/textminer.git
-cd textminer
-bundle install
+gem build textminer.gemspec
+gem install textminer-0.0.1.gem
 ```
-
-After `bundle install` the `textminer` gem is installed and available on the command line or in a Ruby repl.
 
 ## Within Ruby
 

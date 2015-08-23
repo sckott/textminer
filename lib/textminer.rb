@@ -2,6 +2,8 @@ require 'digest/sha1'
 require 'httparty'
 require 'json'
 require 'pdf-reader'
+require "fileutils"
+require "textminer/version"
 
 module Textminer
   ##
@@ -16,6 +18,11 @@ module Textminer
   #     Textminer.links("10.5555/515151")
   #     # no link to full text available
   #     Textminer.links("10.1371/journal.pone.0000308")
+  #     # many DOIs at once
+  #     res = Textminer.links(["10.3897/phytokeys.42.7604", "10.3897/zookeys.516.9439"])
+  #     res.links
+  #     res.pdf
+  #     res.xml
   def self.links(doi)
     Request.new(doi).perform
   end
@@ -31,6 +38,8 @@ module Textminer
   #     require 'textminer'
   #     # fetch full text by DOI - xml by default
   #     Textminer.fetch("10.3897/phytokeys.42.7604")
+  #     # many DOIs - xml output
+  #     res = Textminer.fetch(["10.3897/phytokeys.42.7604", "10.3897/zookeys.516.9439"])
   #     # fetch full text - pdf
   #     Textminer.fetch("10.3897/phytokeys.42.7604", "pdf")
   def self.fetch(doi, type = 'xml')
@@ -68,7 +77,12 @@ module Textminer
       lk = pick_link(lks)
       case self.type
       when "xml"
-        HTTParty.get(lk)
+        # HTTParty.get(lk)
+        coll = []
+        Array(lk).each do |x|
+          coll << HTTParty.get(x)
+        end
+        return coll
       when "pdf"
         serialize_pdf(lk, self.doi)
       end
@@ -107,8 +121,12 @@ module Textminer
 
     def perform
       url = "http://api.crossref.org/works/"
-      res = HTTParty.get(url + self.doi)
-      Response.new(self.doi, res)
+      coll = []
+      Array(self.doi).each do |x|
+        coll << HTTParty.get(url + x)
+      end
+      # res = HTTParty.get(url + self.doi)
+      Response.new(self.doi, coll)
     end
   end
 
@@ -116,33 +134,40 @@ module Textminer
     attr_reader :doi, :response
 
     def initialize(doi, res)
-      @doi          = doi
-      @res          = res
+      @doi = doi
+      @res = res
     end
 
     def raw_body
-      @res
+      # @res
+      @res.collect { |x| x.body }
     end
 
     def parsed
-      JSON.parse(@res.body)
+      # JSON.parse(@res.body)
+      @res.collect { |x| JSON.parse(x.body) }
     end
 
     def links
-      @res['message']['link']
+      # @res['message']['link']
+      @res.collect { |x| x['message']['link'] }
     end
 
     def pdf
       tmp = links
       if !tmp.nil?
-        tmp.select{|x| x['content-type'] == "application/pdf"}[0]['URL']
+        tmp.collect { |z|
+          z.select{ |x| x['content-type'] == "application/pdf" }[0]['URL']
+        }
       end
     end
 
     def xml
       tmp = links
       if !tmp.nil?
-        tmp.select{|x| x['content-type'] == "application/xml"}[0]['URL']
+        tmp.collect { |z|
+          z.select{ |x| x['content-type'] == "application/xml" }[0]['URL']
+        }
       end
     end
 

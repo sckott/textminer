@@ -15,8 +15,8 @@ class TestResponse < Test::Unit::TestCase
   def setup
     @doi = '10.5555/515151'
     @doi2 = "10.3897/phytokeys.42.7604"
-    @pdf = "http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.pdf"
-    @xml = "http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.xml"
+    @pdf = ["http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.pdf"]
+    @xml = ["http://annalsofpsychoceramics.labs.crossref.org/fulltext/10.5555/515151.xml"]
   end
 
   def test_links_endpoint
