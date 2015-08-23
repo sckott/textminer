@@ -2,6 +2,7 @@ require "textminer"
 require 'fileutils'
 require "test/unit"
 require "oga"
+require 'helper'
 
 class TestResponse < Test::Unit::TestCase
 

@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake", '~> 10.4'
   s.add_development_dependency "test-unit", '~> 3.1'
   s.add_development_dependency "oga", '~> 1.2'
+  s.add_development_dependency "simplecov"
+  s.add_development_dependency "codecov"
   s.add_runtime_dependency 'httparty', '~> 0.13'
   s.add_runtime_dependency 'thor', '~> 0.19'
   s.add_runtime_dependency 'json', '~> 1.8'
