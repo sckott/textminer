@@ -7,7 +7,7 @@ __This is alpha software, so expect changes__
 
 ## What is it?
 
-__`textminer` helps you text mine through Crossref's TDM:__
+__`textminer` helps you text mine through Crossref's TDM (Text & Data Mining) services:__
 
 ## Changes
 
