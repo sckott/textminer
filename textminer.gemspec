@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.authors     = "Scott Chamberlain"
   s.email       = 'myrmecocystus@gmail.com'
   s.files       = ["lib/textminer.rb"]
+  s.test_files  = ["test/test_tdm.rb"]
   s.homepage    = 'http://github.com/sckott/textminer'
   s.licenses    = 'MIT'
   s.require_paths = ["lib"]
