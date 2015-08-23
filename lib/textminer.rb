@@ -5,6 +5,11 @@ require 'pdf-reader'
 
 module Textminer
   ##
+  # links: Get links meant for text mining
+  #
+  # Args:
+  # * doi: A DOI, digital object identifier
+  #
   # Examples:
   #     require 'textminer'
   #     # link to full text available
@@ -16,6 +21,12 @@ module Textminer
   end
 
   ##
+  # fetch: Thin layer around pdf-reader gem's PDF::Reader
+  #
+  # Args:
+  # * doi: A DOI, digital object identifier
+  # * type: One of two options to download: xml (default) or pdf
+  #
   # Examples:
   #     require 'textminer'
   #     # fetch full text by DOI - xml by default
@@ -27,6 +38,12 @@ module Textminer
   end
 
   ##
+  # extract: Thin layer around pdf-reader gem's PDF::Reader
+  #
+  # Args:
+  # * path: Path to a pdf file downloaded via `Textminer.fetch`, or
+  #         another way.
+  #
   # Examples:
   #     require 'textminer'
   #     # fetch full text - pdf

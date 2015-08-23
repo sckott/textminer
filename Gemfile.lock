@@ -60,9 +60,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.6)
-  codecov
+  codecov (~> 0.1)
   oga (~> 1.2)
   rake (~> 10.4)
-  simplecov
+  simplecov (~> 0.10)
   test-unit (~> 3.1)
   textminer!
