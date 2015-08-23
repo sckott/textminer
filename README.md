@@ -23,8 +23,9 @@ Not on RubyGems yet
 ### Development version
 
 ```
-gem build textminer.gemspec
-gem install textminer-0.0.1.gem
+git clone git@github.com:sckott/textminer.git
+cd textminer
+rake install
 ```
 
 ## Within Ruby
