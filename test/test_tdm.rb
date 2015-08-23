@@ -37,10 +37,10 @@ class TestResponse < Test::Unit::TestCase
 
   def test_fetch_xml
     res = Textminer.fetch(@doi2, "xml")
-    assert_equal(HTTParty::Response, res.class)
-    assert_true(res.ok?)
-    assert_equal(String, res.body.class)
-    assert_equal("PhytoKeys", Oga.parse_xml(res.body).xpath('//journal-meta//journal-id').text)
+    assert_equal(HTTParty::Response, res[0].class)
+    assert_true(res[0].ok?)
+    assert_equal(String, res[0].body.class)
+    assert_equal("PhytoKeys", Oga.parse_xml(res[0].body).xpath('//journal-meta//journal-id').text)
   end
 
   # def test_fetch_pdf
