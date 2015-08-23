@@ -6,7 +6,7 @@ require 'textminer/version'
 Gem::Specification.new do |s|
   s.name        = 'textminer'
   s.version     = Textminer::VERSION
-  s.date        = '2015-08-22'
+  s.date        = '2015-08-23'
   s.summary     = "Interact with Crossref's Text and Data mining API"
   s.description = "Search Crossref's search API for full text content, and get full text content."
   s.authors     = "Scott Chamberlain"
@@ -23,4 +23,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'thor', '~> 0.19'
   s.add_runtime_dependency 'json', '~> 1.8'
   s.add_runtime_dependency 'launchy', '~> 2.4', '>= 2.4.2'
+  s.add_runtime_dependency 'pdf-reader','~> 1.3'
 end

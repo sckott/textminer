@@ -1,6 +1,7 @@
 require 'digest/sha1'
 require 'httparty'
 require 'json'
+require 'pdf-reader'
 
 module Textminer
   ##
@@ -17,10 +18,24 @@ module Textminer
   ##
   # Examples:
   #     require 'textminer'
-  #     # fetch full text by DOI
-  #     Textminer.fetch("10.5555/515151")
+  #     # fetch full text by DOI - xml by default
+  #     Textminer.fetch("10.3897/phytokeys.42.7604")
+  #     # fetch full text - pdf
+  #     Textminer.fetch("10.3897/phytokeys.42.7604", "pdf")
   def self.fetch(doi, type = 'xml')
     Fetch.new(doi, type).fetchtext
+  end
+
+  ##
+  # Examples:
+  #     require 'textminer'
+  #     # fetch full text - pdf
+  #     res = Textminer.fetch("10.3897/phytokeys.42.7604", "pdf")
+  #     # extract pdf to text
+  #     Textminer.extract(res)
+  def self.extract(path)
+    rr = PDF::Reader.new(path)
+    rr.pages.map { |page| page.text }.join("\n")
   end
 
   class Fetch #:nodoc:
@@ -38,7 +53,7 @@ module Textminer
       when "xml"
         HTTParty.get(lk)
       when "pdf"
-        serialize_pdf(lk)
+        serialize_pdf(lk, self.doi)
       end
     end
 
@@ -55,10 +70,13 @@ module Textminer
       end
     end
 
-    def serialize_pdf(x)
-      File.open("/Users/sacmac/.textminer/one.pdf", "wb") do |f|
+    def serialize_pdf(x, y)
+      path = "/Users/sacmac/.textminer/" + y.gsub('/', '_') + ".pdf"
+      File.open(path, "wb") do |f|
         f.write HTTParty.get(x).parsed_response
       end
+
+      return path
     end
 
   end
@@ -110,6 +128,15 @@ module Textminer
         tmp.select{|x| x['content-type'] == "application/xml"}[0]['URL']
       end
     end
+
+    def all
+      [xml, pdf]
+    end
+
+    # def browse
+
+    # end
+
   end
 
 end
