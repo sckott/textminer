@@ -2,6 +2,7 @@ textminer
 =========
 
 [![Build Status](https://api.travis-ci.org/sckott/textminer.png)](https://travis-ci.org/sckott/textminer)
+[![codecov.io](http://codecov.io/github/sckott/textminer/coverage.svg?branch=master)](http://codecov.io/github/sckott/textminer?branch=master)
 
 __This is alpha software, so expect changes__
 
