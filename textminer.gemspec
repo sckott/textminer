@@ -6,7 +6,7 @@ require 'textminer/version'
 Gem::Specification.new do |s|
   s.name        = 'textminer'
   s.version     = Textminer::VERSION
-  s.date        = '2015-08-23'
+  s.date        = '2015-08-24'
   s.summary     = "Interact with Crossref's Text and Data mining API"
   s.description = "Search Crossref's search API for full text content, and get full text content."
   s.authors     = "Scott Chamberlain"
