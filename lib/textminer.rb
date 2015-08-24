@@ -1,4 +1,3 @@
-require 'digest/sha1'
 require 'httparty'
 require 'json'
 require 'pdf-reader'
