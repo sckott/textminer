@@ -7,12 +7,12 @@ require "textminer/version"
 
 module Textminer
   ##
-  # links: Get links meant for text mining
+  # Get links meant for text mining
   #
-  # Args:
-  # * doi: A DOI, digital object identifier
+  # @param doi [Array] A DOI, digital object identifier
+  # @return [Array] the output
   #
-  # Examples:
+  # @example
   #     require 'textminer'
   #     # link to full text available
   #     Textminer.links("10.5555/515151")
@@ -28,13 +28,12 @@ module Textminer
   end
 
   ##
-  # fetch: Thin layer around pdf-reader gem's PDF::Reader
+  # Thin layer around pdf-reader gem's {PDF::Reader}
   #
-  # Args:
-  # * doi: A DOI, digital object identifier
-  # * type: One of two options to download: xml (default) or pdf
+  # @param doi [Array] A DOI, digital object identifier
+  # @param type [Array] One of two options to download: xml (default) or pdf
   #
-  # Examples:
+  # @example
   #     require 'textminer'
   #     # fetch full text by DOI - xml by default
   #     Textminer.fetch("10.3897/phytokeys.42.7604")
@@ -47,13 +46,12 @@ module Textminer
   end
 
   ##
-  # extract: Thin layer around pdf-reader gem's PDF::Reader
+  # Thin layer around pdf-reader gem's PDF::Reader
   #
-  # Args:
-  # * path: Path to a pdf file downloaded via `Textminer.fetch`, or
-  #         another way.
+  # @param path [String] Path to a pdf file downloaded via {fetch}, or
+  #   another way.
   #
-  # Examples:
+  # @example
   #     require 'textminer'
   #     # fetch full text - pdf
   #     res = Textminer.fetch("10.3897/phytokeys.42.7604", "pdf")
