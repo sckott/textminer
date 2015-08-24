@@ -30,7 +30,7 @@ module Textminer
   end
 
   ##
-  # Thin layer around pdf-reader gem's {PDF::Reader}
+  # Thin layer around pdf-reader gem's PDF::Reader
   #
   # @param doi [Array] A DOI, digital object identifier
   # @param type [Array] One of two options to download: xml (default) or pdf
