@@ -2,8 +2,10 @@ require 'digest/sha1'
 require 'httparty'
 require 'json'
 require 'pdf-reader'
-require "fileutils"
 require "textminer/version"
+require "textminer/request"
+require "textminer/response"
+require "textminer/fetch"
 
 module Textminer
   ##
@@ -60,123 +62,6 @@ module Textminer
   def self.extract(path)
     rr = PDF::Reader.new(path)
     rr.pages.map { |page| page.text }.join("\n")
-  end
-
-  class Fetch #:nodoc:
-    attr_accessor :doi, :type
-
-    def initialize(doi, type)
-      self.doi = doi
-      self.type = type
-    end
-
-    def fetchtext
-      lks = Textminer.links(self.doi)
-      lk = pick_link(lks)
-      case self.type
-      when "xml"
-        # HTTParty.get(lk)
-        coll = []
-        Array(lk).each do |x|
-          coll << HTTParty.get(x)
-        end
-        return coll
-      when "pdf"
-        serialize_pdf(lk, self.doi)
-      end
-    end
-
-    private
-
-    def pick_link(x)
-      case self.type
-      when "xml"
-        x.xml
-      when "pdf"
-        x.pdf
-      else
-        puts "type must be xml or pdf"
-      end
-    end
-
-    def serialize_pdf(x, y)
-      path = "/Users/sacmac/.textminer/" + y.gsub('/', '_') + ".pdf"
-      File.open(path, "wb") do |f|
-        f.write HTTParty.get(x).parsed_response
-      end
-
-      return path
-    end
-
-  end
-
-  class Request #:nodoc:
-    attr_accessor :doi
-
-    def initialize(doi)
-      self.doi = doi
-    end
-
-    def perform
-      url = "http://api.crossref.org/works/"
-      coll = []
-      Array(self.doi).each do |x|
-        coll << HTTParty.get(url + x)
-      end
-      # res = HTTParty.get(url + self.doi)
-      Response.new(self.doi, coll)
-    end
-  end
-
-  class Response #:nodoc:
-    attr_reader :doi, :response
-
-    def initialize(doi, res)
-      @doi = doi
-      @res = res
-    end
-
-    def raw_body
-      # @res
-      @res.collect { |x| x.body }
-    end
-
-    def parsed
-      # JSON.parse(@res.body)
-      @res.collect { |x| JSON.parse(x.body) }
-    end
-
-    def links
-      # @res['message']['link']
-      @res.collect { |x| x['message']['link'] }
-    end
-
-    def pdf
-      tmp = links
-      if !tmp.nil?
-        tmp.collect { |z|
-          z.select{ |x| x['content-type'] == "application/pdf" }[0]['URL']
-        }
-      end
-    end
-
-    def xml
-      tmp = links
-      if !tmp.nil?
-        tmp.collect { |z|
-          z.select{ |x| x['content-type'] == "application/xml" }[0]['URL']
-        }
-      end
-    end
-
-    def all
-      [xml, pdf]
-    end
-
-    # def browse
-
-    # end
-
   end
 
 end
