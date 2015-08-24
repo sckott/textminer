@@ -18,6 +18,9 @@ Gem::Specification.new do |s|
   s.test_files  = ["test/test_tdm.rb"]
   s.require_paths = ["lib"]
 
+  s.bindir      = 'bin'
+  s.executables = ['tm']
+
   s.add_development_dependency "bundler", '~> 1.6'
   s.add_development_dependency "rake", '~> 10.4'
   s.add_development_dependency "test-unit", '~> 3.1'
