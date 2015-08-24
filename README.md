@@ -4,8 +4,6 @@ textminer
 [![Build Status](https://api.travis-ci.org/sckott/textminer.png)](https://travis-ci.org/sckott/textminer)
 [![codecov.io](http://codecov.io/github/sckott/textminer/coverage.svg?branch=master)](http://codecov.io/github/sckott/textminer?branch=master)
 
-__This is alpha software, so expect changes__
-
 ## What is it?
 
 __`textminer` helps you text mine through Crossref's TDM (Text & Data Mining) services:__
@@ -18,7 +16,9 @@ For changes see the [NEWS file](https://github.com/sckott/textminer/blob/master/
 
 ### Release version
 
-Not on RubyGems yet
+```
+gem install textminer
+```
 
 ### Development version
 
