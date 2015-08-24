@@ -13,11 +13,11 @@ class Tm < Thor
   # method_options :doi => :boolean
   def links(tt)
   	tt = "#{tt}"
-    tt = tt.to_s.split(',')
-    out = Textiner.links(tt)
+    # tt = tt.to_s.split(',')
+    out = Textminer.links(tt).all
     puts out
   end
-
+end
 #   desc "search STRING", "Search for articles via query string or DOI"
 #   method_option :doi, :default => nil
 #   method_option :page, :default => nil
