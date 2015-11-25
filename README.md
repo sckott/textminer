@@ -8,6 +8,8 @@ textminer
 
 __`textminer` helps you text mine through Crossref's TDM (Text & Data Mining) services:__
 
+__NOTE (2015-11-25): A low level Crossref client (`serrano`) is in development - this client will soon use that - hold tight__
+
 ## Changes
 
 For changes see the [NEWS file](https://github.com/sckott/textminer/blob/master/NEWS.md).
