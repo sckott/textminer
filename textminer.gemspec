@@ -6,7 +6,7 @@ require 'textminer/version'
 Gem::Specification.new do |s|
   s.name        = 'textminer'
   s.version     = Textminer::VERSION
-  s.date        = '2015-08-24'
+  s.date        = '2015-11-25'
   s.summary     = "Interact with Crossref's Text and Data mining API"
   s.description = "Search Crossref's search API for full text content, and get full text content."
   s.authors     = "Scott Chamberlain"
@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.licenses    = 'MIT'
 
   s.files = `git ls-files -z`.split("\x0").reject {|f| f.match(%r{^(test|spec|features)/}) }
-  s.test_files  = ["test/test_tdm.rb"]
   s.require_paths = ["lib"]
 
   s.bindir      = 'bin'
@@ -27,6 +26,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "oga", '~> 1.2'
   s.add_development_dependency "simplecov", '~> 0.10'
   s.add_development_dependency "codecov", '~> 0.1'
+
+  s.add_runtime_dependency 'serrano', '~> 0.1.1'
   s.add_runtime_dependency 'httparty', '~> 0.13'
   s.add_runtime_dependency 'thor', '~> 0.19'
   s.add_runtime_dependency 'json', '~> 1.8'
