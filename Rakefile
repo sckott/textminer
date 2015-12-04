@@ -16,7 +16,7 @@ task :docs do
 end
 
 desc "bundle install"
-task :b do
+task :bundle do
   system "bundle install"
 end
 
@@ -31,7 +31,7 @@ task :build do
 end
 
 desc "Install textminer"
-task :install => :build do
+task :install => [:bundle, :build] do
 	system "gem install textminer-#{Textminer::VERSION}.gem"
 end
 
