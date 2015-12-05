@@ -1,6 +1,7 @@
 textminer
 =========
 
+[![gem version](https://img.shields.io/gem/v/textminer.svg)](https://rubygems.org/gems/textminer)
 [![Build Status](https://travis-ci.org/sckott/textminer.svg?branch=master)](https://travis-ci.org/sckott/textminer)
 [![codecov.io](http://codecov.io/github/sckott/textminer/coverage.svg?branch=master)](http://codecov.io/github/sckott/textminer?branch=master)
 
