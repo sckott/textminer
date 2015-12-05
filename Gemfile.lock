@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    textminer (0.1.3.900)
+    textminer (0.1.5)
       faraday (~> 0.9.1)
       faraday_middleware (~> 0.10.0)
       httparty (~> 0.13)

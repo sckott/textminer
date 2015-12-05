@@ -1,3 +1,3 @@
 module Textminer
-  VERSION = "0.1.3.900"
+  VERSION = "0.1.5"
 end
