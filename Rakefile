@@ -3,12 +3,27 @@ require 'rake/testtask'
 
 Rake::TestTask.new do |t|
   t.libs << "test"
-  t.test_files = FileList['test/test*.rb']
+  t.test_files = FileList['test/test-*.rb']
   t.verbose = true
 end
 
 desc "Run tests"
 task :default => :test
+
+desc "Build textminer docs"
+task :docs do
+	system "yardoc"
+end
+
+desc "bundle install"
+task :bundle do
+  system "bundle install"
+end
+
+desc "clean out builds"
+task :clean do
+  system "ls | grep [0-9].gem | xargs rm"
+end
 
 desc "Build textminer"
 task :build do
@@ -16,7 +31,7 @@ task :build do
 end
 
 desc "Install textminer"
-task :install => :build do
+task :install => [:bundle, :build] do
 	system "gem install textminer-#{Textminer::VERSION}.gem"
 end
 

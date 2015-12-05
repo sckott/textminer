@@ -1,52 +1,76 @@
+require 'launchy'
+require "textminer/link_methods_hash"
+require "textminer/link_methods_array"
+
 module Textminer
   class Response #:nodoc:
-    attr_reader :doi, :response
+    attr_reader :doi, :member, :response, :facet
 
-    def initialize(doi, res)
+    def initialize(doi, member, response, facet)
       @doi = doi
-      @res = res
+      @member = member
+      @response = response
+      @facet = facet
     end
 
-    def raw_body
-      # @res
-      @res.collect { |x| x.body }
+    def to_s
+      if !@doi.nil?
+        if @doi.length > 3
+          ending = '...'
+        else
+          ending = ''
+        end
+        tt = sprintf('dois: %s %s', Array(@doi)[0..2].join(', '), ending)
+      end
+      if !@member.nil?
+        tt = 'member: ' + @member.to_s
+      end
+      if @doi.nil? && @member.nil?
+        tt = ''
+      end
+      sprintf("<textminer>: \n      search: %s\n      no. licenses: %s", tt, @facet)
     end
 
-    def parsed
-      # JSON.parse(@res.body)
-      @res.collect { |x| JSON.parse(x.body) }
+    def inspect
+      to_s
     end
 
-    def links
-      # @res['message']['link']
-      @res.collect { |x| x['message']['link'] }
+    def body
+      @response
     end
 
-    def pdf
-      tmp = links
-      if !tmp.nil?
-        tmp.collect { |z|
-          z.select{ |x| x['content-type'] == "application/pdf" }[0]['URL']
-        }
+    def links(just_urls = true)
+      tmp = @response.links(just_urls)
+      compactif(tmp)
+    end
+
+    def links_xml(just_urls = true)
+      tmp = @response.links_xml(just_urls)
+      compactif(tmp)
+    end
+
+    def links_pdf(just_urls = true)
+      tmp = @response.links_pdf(just_urls)
+      compactif(tmp)
+    end
+
+    def links_plain(just_urls = true)
+      tmp = @response.links_plain(just_urls)
+      compactif(tmp)
+    end
+
+    protected
+
+    def compactif(z)
+      if z.nil?
+        return z
+      else
+        return z.compact
       end
     end
-
-    def xml
-      tmp = links
-      if !tmp.nil?
-        tmp.collect { |z|
-          z.select{ |x| x['content-type'] == "application/xml" }[0]['URL']
-        }
-      end
-    end
-
-    def all
-      [xml, pdf]
-    end
-
     # def browse
-
+    #   url = 'http://doi.org/' + @doi
+    #   Launchy.open(url)
     # end
-
   end
 end
