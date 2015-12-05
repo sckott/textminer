@@ -14,7 +14,7 @@ class Tm < Thor
   def links(tt)
   	tt = "#{tt}"
     tt = tt.to_s.split(',')
-    out = Textminer.links(tt).all
+    out = Textminer.search(doi: tt).links(true)
     puts out
   end
 end

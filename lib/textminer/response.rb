@@ -1,4 +1,6 @@
 require 'launchy'
+require "textminer/link_methods_hash"
+require "textminer/link_methods_array"
 
 module Textminer
   class Response #:nodoc:
@@ -37,22 +39,35 @@ module Textminer
       @response
     end
 
-    def links(just_urls = false)
-      @response.links(just_urls).compact
+    def links(just_urls = true)
+      tmp = @response.links(just_urls)
+      compactif(tmp)
     end
 
-    def links_xml(just_urls = false)
-      @response.links_xml(just_urls).compact
+    def links_xml(just_urls = true)
+      tmp = @response.links_xml(just_urls)
+      compactif(tmp)
     end
 
-    def links_pdf(just_urls = false)
-      @response.links_pdf(just_urls).compact
+    def links_pdf(just_urls = true)
+      tmp = @response.links_pdf(just_urls)
+      compactif(tmp)
     end
 
-    def links_plain(just_urls = false)
-      @response.links_plain(just_urls).compact
+    def links_plain(just_urls = true)
+      tmp = @response.links_plain(just_urls)
+      compactif(tmp)
     end
 
+    protected
+
+    def compactif(z)
+      if z.nil?
+        return z
+      else
+        return z.compact
+      end
+    end
     # def browse
     #   url = 'http://doi.org/' + @doi
     #   Launchy.open(url)

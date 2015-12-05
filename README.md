@@ -107,22 +107,7 @@ Textminer.extract(res.path)
 
 ### On the CLI
 
-Get links
-
-```sh
-tm links 10.3897/phytokeys.42.7604
-```
-
-```sh
-http://phytokeys.pensoft.net/lib/ajax_srv/article_elements_srv.php?action=download_xml&item_id=4190
-http://phytokeys.pensoft.net/lib/ajax_srv/article_elements_srv.php?action=download_pdf&item_id=4190
-```
-
-More than one DOI:
-
-```sh
-tm links '10.3897/phytokeys.42.7604,10.3897/zookeys.516.9439'
-```
+Coming soon...
 
 ## To do
 

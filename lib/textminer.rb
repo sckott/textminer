@@ -22,7 +22,7 @@ module Textminer
   # @example
   #     require 'textminer'
   #     # link to full text available
-  #     Textminer.search(doi: '10.7554/elife.06430')
+  #     Textminer.search(doi: '10.3897/phytokeys.42.7604')
   #     # no link to full text available
   #     Textminer.search(doi: "10.1371/journal.pone.0000308")
   #     # many DOIs at once
@@ -117,7 +117,7 @@ module Textminer
   #   res.path
   #   # get text
   #   res.parse
-  def self.fetch(url:)
+  def self.fetch(url)
     Miner.new(url).perform
   end
 
