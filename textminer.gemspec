@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'oga', '~> 2.10'
   s.add_development_dependency 'simplecov', '~> 0.15.0'
   s.add_development_dependency 'codecov', '~> 0.1.10'
+  s.add_development_dependency 'vcr', '~> 3.0', '>= 3.0.3'
+  s.add_development_dependency 'webmock', '~> 2.3', '>= 2.3.2'
 
   s.add_runtime_dependency 'serrano', '~> 0.3.6'
   s.add_runtime_dependency 'httparty', '~> 0.15.6'

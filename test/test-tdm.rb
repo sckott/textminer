@@ -19,10 +19,12 @@ class TestResponse < Test::Unit::TestCase
   end
 
   def test_search
-    assert_equal(Textminer::Response, Textminer.search(doi: @doi).class)
-    assert_equal(@doi, Textminer.search(doi: @doi).doi)
-    assert_equal(nil, Textminer.search(doi: @doi).member)
-    assert_equal(nil, Textminer.search(doi: @doi).facet)
+    VCR.use_cassette("test_search") do
+      assert_equal(Textminer::Response, Textminer.search(doi: @doi).class)
+      assert_equal(@doi, Textminer.search(doi: @doi).doi)
+      assert_equal(nil, Textminer.search(doi: @doi).member)
+      assert_equal(nil, Textminer.search(doi: @doi).facet)
+    end
   end
 
   # def test_fetch_xml

@@ -1,0 +1,223 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.crossref.org/works/10.5555/515151
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      X-User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Content-Length:
+      - '3211'
+      Server:
+      - http-kit
+      Date:
+      - Thu, 17 Aug 2017 16:51:26 GMT
+      X-Rate-Limit-Limit:
+      - '50'
+      X-Rate-Limit-Interval:
+      - 1s
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"status":"ok","message-type":"work","message-version":"1.0.0","message":{"indexed":{"date-parts":[[2017,8,9]],"date-time":"2017-08-09T06:52:20Z","timestamp":1502261540584},"reference-count":0,"publisher":"CrossRef
+        Test Account","license":[{"URL":"http:\/\/www.crossref.org\/license","start":{"date-parts":[[2013,2,3]],"date-time":"2013-02-03T00:00:00Z","timestamp":1359849600000},"delay-in-days":0,"content-version":"vor"},{"URL":"http:\/\/creativecommons.org\/licenses\/by\/3.0\/deed.en_US","start":{"date-parts":[[2014,2,3]],"date-time":"2014-02-03T00:00:00Z","timestamp":1391385600000},"delay-in-days":365,"content-version":"vor"}],"funder":[{"name":"National
+        Science Foundation","award":["psychoceramics-1152342"]},{"name":"Basic Energy
+        Sciences, Office of Science, U.S. Department of Energy","award":["high-energy-metaphysics-SC0001091"]}],"content-domain":{"domain":["annalsofpsychoceramics.labs.crossref.org"],"crossmark-restriction":true},"short-container-title":["Annals
+        Psychoceramics B"],"published-print":{"date-parts":[[2013,2,3]]},"DOI":"10.5555\/515151","type":"journal-article","created":{"date-parts":[[2013,4,2]],"date-time":"2013-04-02T10:33:26Z","timestamp":1364898806000},"page":"1-8","update-policy":"http:\/\/dx.doi.org\/10.5555\/crossmark_policy","source":"Crossref","is-referenced-by-count":0,"title":["The
+        Global State of Psychoceramics Research"],"prefix":"10.5555","volume":"2013","author":[{"ORCID":"http:\/\/orcid.org\/0000-0002-1825-0097","authenticated-orcid":true,"given":"Josiah","family":"Carberry","affiliation":[]}],"member":"7822","container-title":["Annals
+        of Psychoceramics B"],"original-title":[],"link":[{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.pdf","content-type":"application\/pdf","content-version":"vor","intended-application":"text-mining"},{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.xml","content-type":"application\/xml","content-version":"vor","intended-application":"text-mining"}],"deposited":{"date-parts":[[2014,6,5]],"date-time":"2014-06-05T18:30:20Z","timestamp":1401993020000},"score":1.0,"subtitle":[],"short-title":[],"issued":{"date-parts":[[2013,2,3]]},"references-count":0,"alternative-id":["515151","515151"],"URL":"http:\/\/dx.doi.org\/10.5555\/515151","relation":{},"ISSN":["5555-5152","5555-6167"],"issn-type":[{"value":"5555-5152","type":"print"},{"value":"5555-6167","type":"electronic"}],"assertion":[{"value":"http:\/\/orcid.org\/0000-0002-1825-0097","URL":"http:\/\/orcid.org\/0000-0002-1825-0097","order":0,"name":"orcid","label":"ORCID","group":{"name":"identifiers","label":"Identifiers"}},{"value":"2013-02-01","order":0,"name":"received","label":"Received","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-01","order":2,"name":"reviewed","label":"Reviewed","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-02","order":1,"name":"accepted","label":"Accepted","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-03","order":2,"name":"published","label":"Published","group":{"name":"publication_history","label":"Publication
+        History"}}]}}'
+    http_version: 
+  recorded_at: Thu, 17 Aug 2017 16:51:27 GMT
+- request:
+    method: get
+    uri: https://api.crossref.org/works/10.5555/515151
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      X-User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Content-Length:
+      - '3211'
+      Server:
+      - http-kit
+      Date:
+      - Thu, 17 Aug 2017 16:51:27 GMT
+      X-Rate-Limit-Limit:
+      - '50'
+      X-Rate-Limit-Interval:
+      - 1s
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"status":"ok","message-type":"work","message-version":"1.0.0","message":{"indexed":{"date-parts":[[2017,8,9]],"date-time":"2017-08-09T06:52:20Z","timestamp":1502261540584},"reference-count":0,"publisher":"CrossRef
+        Test Account","license":[{"URL":"http:\/\/www.crossref.org\/license","start":{"date-parts":[[2013,2,3]],"date-time":"2013-02-03T00:00:00Z","timestamp":1359849600000},"delay-in-days":0,"content-version":"vor"},{"URL":"http:\/\/creativecommons.org\/licenses\/by\/3.0\/deed.en_US","start":{"date-parts":[[2014,2,3]],"date-time":"2014-02-03T00:00:00Z","timestamp":1391385600000},"delay-in-days":365,"content-version":"vor"}],"funder":[{"name":"National
+        Science Foundation","award":["psychoceramics-1152342"]},{"name":"Basic Energy
+        Sciences, Office of Science, U.S. Department of Energy","award":["high-energy-metaphysics-SC0001091"]}],"content-domain":{"domain":["annalsofpsychoceramics.labs.crossref.org"],"crossmark-restriction":true},"short-container-title":["Annals
+        Psychoceramics B"],"published-print":{"date-parts":[[2013,2,3]]},"DOI":"10.5555\/515151","type":"journal-article","created":{"date-parts":[[2013,4,2]],"date-time":"2013-04-02T10:33:26Z","timestamp":1364898806000},"page":"1-8","update-policy":"http:\/\/dx.doi.org\/10.5555\/crossmark_policy","source":"Crossref","is-referenced-by-count":0,"title":["The
+        Global State of Psychoceramics Research"],"prefix":"10.5555","volume":"2013","author":[{"ORCID":"http:\/\/orcid.org\/0000-0002-1825-0097","authenticated-orcid":true,"given":"Josiah","family":"Carberry","affiliation":[]}],"member":"7822","container-title":["Annals
+        of Psychoceramics B"],"original-title":[],"link":[{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.pdf","content-type":"application\/pdf","content-version":"vor","intended-application":"text-mining"},{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.xml","content-type":"application\/xml","content-version":"vor","intended-application":"text-mining"}],"deposited":{"date-parts":[[2014,6,5]],"date-time":"2014-06-05T18:30:20Z","timestamp":1401993020000},"score":1.0,"subtitle":[],"short-title":[],"issued":{"date-parts":[[2013,2,3]]},"references-count":0,"alternative-id":["515151","515151"],"URL":"http:\/\/dx.doi.org\/10.5555\/515151","relation":{},"ISSN":["5555-5152","5555-6167"],"issn-type":[{"value":"5555-5152","type":"print"},{"value":"5555-6167","type":"electronic"}],"assertion":[{"value":"http:\/\/orcid.org\/0000-0002-1825-0097","URL":"http:\/\/orcid.org\/0000-0002-1825-0097","order":0,"name":"orcid","label":"ORCID","group":{"name":"identifiers","label":"Identifiers"}},{"value":"2013-02-01","order":0,"name":"received","label":"Received","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-01","order":2,"name":"reviewed","label":"Reviewed","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-02","order":1,"name":"accepted","label":"Accepted","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-03","order":2,"name":"published","label":"Published","group":{"name":"publication_history","label":"Publication
+        History"}}]}}'
+    http_version: 
+  recorded_at: Thu, 17 Aug 2017 16:51:27 GMT
+- request:
+    method: get
+    uri: https://api.crossref.org/works/10.5555/515151
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      X-User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Content-Length:
+      - '3211'
+      Server:
+      - http-kit
+      Date:
+      - Thu, 17 Aug 2017 16:51:27 GMT
+      X-Rate-Limit-Limit:
+      - '50'
+      X-Rate-Limit-Interval:
+      - 1s
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"status":"ok","message-type":"work","message-version":"1.0.0","message":{"indexed":{"date-parts":[[2017,8,9]],"date-time":"2017-08-09T06:52:20Z","timestamp":1502261540584},"reference-count":0,"publisher":"CrossRef
+        Test Account","license":[{"URL":"http:\/\/www.crossref.org\/license","start":{"date-parts":[[2013,2,3]],"date-time":"2013-02-03T00:00:00Z","timestamp":1359849600000},"delay-in-days":0,"content-version":"vor"},{"URL":"http:\/\/creativecommons.org\/licenses\/by\/3.0\/deed.en_US","start":{"date-parts":[[2014,2,3]],"date-time":"2014-02-03T00:00:00Z","timestamp":1391385600000},"delay-in-days":365,"content-version":"vor"}],"funder":[{"name":"National
+        Science Foundation","award":["psychoceramics-1152342"]},{"name":"Basic Energy
+        Sciences, Office of Science, U.S. Department of Energy","award":["high-energy-metaphysics-SC0001091"]}],"content-domain":{"domain":["annalsofpsychoceramics.labs.crossref.org"],"crossmark-restriction":true},"short-container-title":["Annals
+        Psychoceramics B"],"published-print":{"date-parts":[[2013,2,3]]},"DOI":"10.5555\/515151","type":"journal-article","created":{"date-parts":[[2013,4,2]],"date-time":"2013-04-02T10:33:26Z","timestamp":1364898806000},"page":"1-8","update-policy":"http:\/\/dx.doi.org\/10.5555\/crossmark_policy","source":"Crossref","is-referenced-by-count":0,"title":["The
+        Global State of Psychoceramics Research"],"prefix":"10.5555","volume":"2013","author":[{"ORCID":"http:\/\/orcid.org\/0000-0002-1825-0097","authenticated-orcid":true,"given":"Josiah","family":"Carberry","affiliation":[]}],"member":"7822","container-title":["Annals
+        of Psychoceramics B"],"original-title":[],"link":[{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.pdf","content-type":"application\/pdf","content-version":"vor","intended-application":"text-mining"},{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.xml","content-type":"application\/xml","content-version":"vor","intended-application":"text-mining"}],"deposited":{"date-parts":[[2014,6,5]],"date-time":"2014-06-05T18:30:20Z","timestamp":1401993020000},"score":1.0,"subtitle":[],"short-title":[],"issued":{"date-parts":[[2013,2,3]]},"references-count":0,"alternative-id":["515151","515151"],"URL":"http:\/\/dx.doi.org\/10.5555\/515151","relation":{},"ISSN":["5555-5152","5555-6167"],"issn-type":[{"value":"5555-5152","type":"print"},{"value":"5555-6167","type":"electronic"}],"assertion":[{"value":"http:\/\/orcid.org\/0000-0002-1825-0097","URL":"http:\/\/orcid.org\/0000-0002-1825-0097","order":0,"name":"orcid","label":"ORCID","group":{"name":"identifiers","label":"Identifiers"}},{"value":"2013-02-01","order":0,"name":"received","label":"Received","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-01","order":2,"name":"reviewed","label":"Reviewed","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-02","order":1,"name":"accepted","label":"Accepted","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-03","order":2,"name":"published","label":"Published","group":{"name":"publication_history","label":"Publication
+        History"}}]}}'
+    http_version: 
+  recorded_at: Thu, 17 Aug 2017 16:51:27 GMT
+- request:
+    method: get
+    uri: https://api.crossref.org/works/10.5555/515151
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      X-User-Agent:
+      - Faraday/v0.12.0.1 Serrano/v0.3.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Content-Length:
+      - '3211'
+      Server:
+      - http-kit
+      Date:
+      - Thu, 17 Aug 2017 16:51:27 GMT
+      X-Rate-Limit-Limit:
+      - '50'
+      X-Rate-Limit-Interval:
+      - 1s
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"status":"ok","message-type":"work","message-version":"1.0.0","message":{"indexed":{"date-parts":[[2017,8,9]],"date-time":"2017-08-09T06:52:20Z","timestamp":1502261540584},"reference-count":0,"publisher":"CrossRef
+        Test Account","license":[{"URL":"http:\/\/www.crossref.org\/license","start":{"date-parts":[[2013,2,3]],"date-time":"2013-02-03T00:00:00Z","timestamp":1359849600000},"delay-in-days":0,"content-version":"vor"},{"URL":"http:\/\/creativecommons.org\/licenses\/by\/3.0\/deed.en_US","start":{"date-parts":[[2014,2,3]],"date-time":"2014-02-03T00:00:00Z","timestamp":1391385600000},"delay-in-days":365,"content-version":"vor"}],"funder":[{"name":"National
+        Science Foundation","award":["psychoceramics-1152342"]},{"name":"Basic Energy
+        Sciences, Office of Science, U.S. Department of Energy","award":["high-energy-metaphysics-SC0001091"]}],"content-domain":{"domain":["annalsofpsychoceramics.labs.crossref.org"],"crossmark-restriction":true},"short-container-title":["Annals
+        Psychoceramics B"],"published-print":{"date-parts":[[2013,2,3]]},"DOI":"10.5555\/515151","type":"journal-article","created":{"date-parts":[[2013,4,2]],"date-time":"2013-04-02T10:33:26Z","timestamp":1364898806000},"page":"1-8","update-policy":"http:\/\/dx.doi.org\/10.5555\/crossmark_policy","source":"Crossref","is-referenced-by-count":0,"title":["The
+        Global State of Psychoceramics Research"],"prefix":"10.5555","volume":"2013","author":[{"ORCID":"http:\/\/orcid.org\/0000-0002-1825-0097","authenticated-orcid":true,"given":"Josiah","family":"Carberry","affiliation":[]}],"member":"7822","container-title":["Annals
+        of Psychoceramics B"],"original-title":[],"link":[{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.pdf","content-type":"application\/pdf","content-version":"vor","intended-application":"text-mining"},{"URL":"http:\/\/annalsofpsychoceramics.labs.crossref.org\/fulltext\/10.5555\/515151.xml","content-type":"application\/xml","content-version":"vor","intended-application":"text-mining"}],"deposited":{"date-parts":[[2014,6,5]],"date-time":"2014-06-05T18:30:20Z","timestamp":1401993020000},"score":1.0,"subtitle":[],"short-title":[],"issued":{"date-parts":[[2013,2,3]]},"references-count":0,"alternative-id":["515151","515151"],"URL":"http:\/\/dx.doi.org\/10.5555\/515151","relation":{},"ISSN":["5555-5152","5555-6167"],"issn-type":[{"value":"5555-5152","type":"print"},{"value":"5555-6167","type":"electronic"}],"assertion":[{"value":"http:\/\/orcid.org\/0000-0002-1825-0097","URL":"http:\/\/orcid.org\/0000-0002-1825-0097","order":0,"name":"orcid","label":"ORCID","group":{"name":"identifiers","label":"Identifiers"}},{"value":"2013-02-01","order":0,"name":"received","label":"Received","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-01","order":2,"name":"reviewed","label":"Reviewed","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-02","order":1,"name":"accepted","label":"Accepted","group":{"name":"publication_history","label":"Publication
+        History"}},{"value":"2013-02-03","order":2,"name":"published","label":"Published","group":{"name":"publication_history","label":"Publication
+        History"}}]}}'
+    http_version: 
+  recorded_at: Thu, 17 Aug 2017 16:51:28 GMT
+recorded_with: VCR 3.0.3
