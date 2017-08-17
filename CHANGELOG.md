@@ -1,3 +1,11 @@
+## 0.4.0 (2017-08-17)
+
+* xxxx (#xx)
+* xxxx (#xx)
+* xxxx (#xx)
+* xxxx (#xx)
+* xxxx (#xx)
+
 ## 0.1.5 (2015-12-04)
 
 * Now using `serrano` gem for interacting with the Crossref API
