@@ -1,5 +1,4 @@
 require 'httparty'
-require 'json'
 require 'pdf-reader'
 require 'serrano'
 require "textminer/miner"

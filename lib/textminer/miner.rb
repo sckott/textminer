@@ -20,7 +20,8 @@ module Textminer
     def perform
       conn = Faraday.new self.url do |c|
         c.use FaradayMiddleware::FollowRedirects
-        c.adapter :net_http
+        c.adapter Faraday.default_adapter
+        #c.adapter :net_http
       end
 
       if is_elsevier_wiley(self.url)

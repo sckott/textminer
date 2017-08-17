@@ -43,7 +43,7 @@ def pull_links(x, y)
       return tmp.select { |z| z['content-type'].match(/#{y}/) }.reject { |c| c.empty? }
     end
   else
-    return x['message']['items'].collect { |x| x['link'].select { |z| z['content-type'].match(/#{y}/) } }.reject { |c| c.empty? }
+    return x['message']['items'].collect { |w| w['link'].select { |z| z['content-type'].match(/#{y}/) } }.reject { |c| c.empty? }
   end
 end
 
@@ -57,9 +57,9 @@ def parse_links(x, just_urls)
     	if just_urls
         if x[0].class != Array
           # return x[0]['URL']
-          return x.collect { |x| x['URL'] }.flatten
+          return x.collect { |w| w['URL'] }.flatten
         else
-          return x.collect { |x| x.collect { |z| z['URL'] }}.flatten
+          return x.collect { |w| w.collect { |z| z['URL'] }}.flatten
           # return x.collect { |x| x['URL'] }.flatten.compact
       		# return x.collect { |x| x.collect { |z| z['URL'] }}.flatten
         end
